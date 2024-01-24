@@ -27,11 +27,11 @@ export class LoginComponent implements AfterViewInit {
       window.google.accounts.id.renderButton(
         document.getElementById("login-with-google"),
         { 
-          type: "standard",     // standard / icon
-          shape: "pill",        // for type standard: rectangle / pill - for type icon: square / circle
-          theme: "filled_blue", // outline / filled_blue / filled_black
-          text: "signin_with",  // signin_with / signup_with / continue_with / signin
-          size: "medium"        // large / medium / small
+          type: "standard",    // standard / icon
+          shape: "pill",       // for type standard: rectangle / pill - for type icon: square / circle
+          theme: "outline",    // outline / filled_blue / filled_black
+          text: "signin_with", // signin_with / signup_with / continue_with / signin
+          size: "medium"       // large / medium / small
         }
       );
       // Display the One Tap dialog

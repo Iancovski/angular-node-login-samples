@@ -1,5 +1,24 @@
-<h1>{{user.name}}</h1>
-<h2>{{user.email}}</h2>
-<img [src]="user.picture" alt="User's picture">
+<div class="fullscreen centralize">
+    <mat-card appearance="outlined" class="p-4 min-w-96">
+        <img [src]="user.picture" alt="User's picture" class="w-24 h-24 rounded-full self-center mb-6">
 
-<button mat-flat-button (click)="logout()">Logout</button>
+        <mat-form-field>
+            <mat-label>ID</mat-label>
+            <input matInput readonly="true" [value]="user.id">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput readonly="true" [value]="user.name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input matInput readonly="true" [value]="user.email">
+        </mat-form-field>
+        
+        <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+    </mat-card>
+</div>
+
+
