@@ -5,8 +5,8 @@ This project consists of samples of **traditional**, **Google** and **Facebook**
 ## Supported Login Methods
 
 - <kbd>[WIP]</kbd> Traditional (username and password)
-- <kbd>[WIP]</kbd> Google - WIP
-- <kbd>[WIP]</kbd> Facebook - **WIP**
+- Google
+- <kbd>[WIP]</kbd> Facebook
 
 ## Quick Start
 
