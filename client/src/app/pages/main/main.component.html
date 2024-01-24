@@ -1,1 +1,5 @@
-<p>main works!</p>
+<h1>{{user.name}}</h1>
+<h2>{{user.email}}</h2>
+<img [src]="user.picture" alt="User's picture">
+
+<button mat-flat-button (click)="logout()">Logout</button>

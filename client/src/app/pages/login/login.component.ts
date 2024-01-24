@@ -1,11 +1,12 @@
-import { AfterViewInit, Component, NgZone, OnInit } from '@angular/core';
+import { AfterViewInit, Component, NgZone } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 import { environment } from '../../../environments/environment';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -26,11 +27,11 @@ export class LoginComponent implements AfterViewInit {
       window.google.accounts.id.renderButton(
         document.getElementById("login-with-google"),
         { 
-          type: "standard",
-          shape: "pill",
-          theme: "filled_blue",
-          text: "signin_with",
-          size: "medium"
+          type: "standard",     // standard / icon
+          shape: "pill",        // for type standard: rectangle / pill - for type icon: square / circle
+          theme: "filled_blue", // outline / filled_blue / filled_black
+          text: "signin_with",  // signin_with / signup_with / continue_with / signin
+          size: "medium"        // large / medium / small
         }
       );
       // Display the One Tap dialog
