@@ -1,6 +1,21 @@
 <div class="fullscreen centralize bg-neutral-100">
     <mat-card appearance="outlined" class="p-4">
         <h1 class="text-center mb-4">Login</h1>
-        <div id="login-with-google"></div>
+
+        <google-login-button [clientId]="clientId"
+                             [callback]="loginWithGoogle"
+                             [width]="300"
+                             size="large"
+                             shape="pill"
+                             theme="outline"></google-login-button>
+
+        <span class="h-2"></span>
+
+        <facebook-login-button [appId]="appId"
+                               [callback]="loginWithFacebook"
+                               [width]="300"
+                               size="large"
+                               shape="pill"
+                               theme="outline"></facebook-login-button>
     </mat-card>
 </div>

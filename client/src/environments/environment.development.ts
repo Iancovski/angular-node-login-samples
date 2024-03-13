@@ -1,6 +1,11 @@
 export const environment = {
     apiUrl: "",
-    google: {
-        clientId: ""
+    login: {
+        google: {
+            clientId: ""
+        },
+        facebook: {
+            appId: ""
+        }
     }
 };
