@@ -1,10 +1,10 @@
 import express from 'express';
 import {OAuth2Client} from 'google-auth-library';
 import environment from '../config/environment';
-import { IUser } from '../models/user.model';
+import {IUser} from '../models/user.model';
 
 export default class AuthController {
-    public static async login (req: express.Request, res: express.Response, next: express.NextFunction) {
+    public static async login(req: express.Request, res: express.Response, next: express.NextFunction) {
         const authClient = new OAuth2Client();
         const credential = req.body.credential;
 

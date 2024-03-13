@@ -1,11 +1,11 @@
-<div [class]="getClass()" (click)="login()">
+<div (click)="login()" [class]="getClass()">
     <div class="content">
         @if (type === "standard" && theme !== "outline") {
             <div [class]="getLogoClass()">
-                <img src="../../../../../assets/facebook-logo-blue.png">
+                <img src="../../../../../assets/facebook-logo.png">
             </div>
         } @else {
-            <img src="../../../../../assets/facebook-logo-blue.png">
+            <img src="../../../../../assets/facebook-logo.png">
         }
 
         @if (type === "standard") {

@@ -4,20 +4,20 @@
 
         <mat-form-field>
             <mat-label>ID</mat-label>
-            <input matInput readonly="true" [value]="user.id">
+            <input [value]="user.id" matInput readonly="true">
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Name</mat-label>
-            <input matInput readonly="true" [value]="user.name">
+            <input [value]="user.name" matInput readonly="true">
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>E-mail</mat-label>
-            <input matInput readonly="true" [value]="user.email">
+            <input [value]="user.email" matInput readonly="true">
         </mat-form-field>
-        
-        <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+
+        <button (click)="logout()" color="primary" mat-flat-button>Logout</button>
     </mat-card>
 </div>
 

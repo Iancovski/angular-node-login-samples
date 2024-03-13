@@ -2,11 +2,11 @@
     <mat-card appearance="outlined" class="p-4">
         <h1 class="text-center mb-4">Login</h1>
 
-        <google-login-button [clientId]="clientId"
-                             [callback]="loginWithGoogle"
+        <google-login-button [callback]="loginWithGoogle"
+                             [clientId]="clientId"
                              [width]="300"
-                             size="large"
                              shape="pill"
+                             size="large"
                              theme="outline"></google-login-button>
 
         <span class="h-2"></span>
@@ -14,8 +14,8 @@
         <facebook-login-button [appId]="appId"
                                [callback]="loginWithFacebook"
                                [width]="300"
-                               size="large"
                                shape="pill"
+                               size="large"
                                theme="outline"></facebook-login-button>
     </mat-card>
 </div>

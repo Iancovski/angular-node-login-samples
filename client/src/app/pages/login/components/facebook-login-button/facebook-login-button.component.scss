@@ -1,14 +1,14 @@
-@font-face{
-    font-family:'Google Sans';
-    font-style:normal;
-    font-weight:500;
+@font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
     src: url(//fonts.gstatic.com/s/googlesans/v58/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrw2IJllpyw.ttf) format('truetype');
 }
 
-@font-face{
-    font-family:'Google Sans';
-    font-style:normal;
-    font-weight:400;
+@font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
     src: url(//fonts.gstatic.com/s/googlesans/v58/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIJllpyw.ttf) format('truetype');
 }
 
@@ -36,7 +36,7 @@
     span {
         text-align: center;
         flex-grow: 1;
-        font-family: "Google Sans",arial,sans-serif;
+        font-family: "Google Sans", arial, sans-serif;
     }
 }
 
