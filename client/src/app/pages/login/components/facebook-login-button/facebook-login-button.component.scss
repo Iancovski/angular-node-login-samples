@@ -1,0 +1,266 @@
+@font-face{
+    font-family:'Google Sans';
+    font-style:normal;
+    font-weight:500;
+    src: url(//fonts.gstatic.com/s/googlesans/v58/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrw2IJllpyw.ttf) format('truetype');
+}
+
+@font-face{
+    font-family:'Google Sans';
+    font-style:normal;
+    font-weight:400;
+    src: url(//fonts.gstatic.com/s/googlesans/v58/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIJllpyw.ttf) format('truetype');
+}
+
+// Type
+
+.standard {
+    border: 1px solid #dadce0;
+    cursor: pointer;
+    height: 32px;
+    width: 300px;
+
+    .content {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    img {
+        height: 14px;
+        margin-right: 8px;
+    }
+
+    span {
+        text-align: center;
+        flex-grow: 1;
+        font-family: "Google Sans",arial,sans-serif;
+    }
+}
+
+.icon {
+
+}
+
+// Size
+
+.standard_small {
+    height: 20px;
+    padding: 0 8px;
+
+    img {
+        height: 10px;
+    }
+
+    span {
+        font-size: 11px;
+        letter-spacing: 0.3px;
+        font-weight: 400;
+    }
+}
+
+.standard_medium {
+    height: 32px;
+    padding: 0 10px;
+
+    img {
+        height: 14px;
+    }
+
+    span {
+        font-size: 14px;
+        letter-spacing: 0.25px;
+        font-weight: 500;
+    }
+}
+
+.standard_large {
+    height: 40px;
+    padding: 0 12px;
+
+    img {
+        height: 18px;
+    }
+
+    span {
+        font-size: 14px;
+        letter-spacing: 0.25px;
+        font-weight: 500;
+    }
+}
+
+// Shape
+
+.rectangular {
+    border-radius: 4px;
+}
+
+.pill {
+    border-radius: 20px;
+}
+
+.square {
+
+}
+
+.circle {
+
+}
+
+// Theme
+
+.outline {
+    background-color: #fff;
+    border: 1px solid #dadce0;
+
+    span {
+        color: #3c4043;
+    }
+}
+
+.filled_blue {
+    background-color: #1a73e8;
+    border: none;
+
+    span {
+        color: #ffffff;
+    }
+}
+
+.filled_black {
+    background-color: #202124;
+    border: none;
+
+    span {
+        color: #ffffff;
+    }
+}
+
+.filled_black {
+
+}
+
+// Logo Alignment
+
+.left {
+
+}
+
+.center {
+    .content {
+        justify-content: center;
+    }
+
+    span {
+        flex-grow: 0;
+    }
+}
+
+// Logo Theme
+
+.logo_rectangular_small {
+    background-color: white;
+    margin-left: -6px;
+    height: 16px;
+    width: 16px;
+    border-radius: 3px 0 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-right: 0;
+    }
+}
+
+.logo_rectangular_medium {
+    background-color: white;
+    margin-left: -8px;
+    height: 28px;
+    width: 28px;
+    border-radius: 3px 0 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-right: 0;
+    }
+}
+
+.logo_rectangular_large {
+    background-color: white;
+    margin-left: -10px;
+    height: 36px;
+    width: 36px;
+    border-radius: 3px 0 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-right: 0;
+    }
+}
+
+.logo_pill_small {
+    background-color: white;
+    margin-left: -6px;
+    height: 16px;
+    width: 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-right: 0;
+    }
+}
+
+.logo_pill_medium {
+    background-color: white;
+    margin-left: -8px;
+    height: 28px;
+    width: 28px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-right: 0;
+    }
+}
+
+.logo_pill_large {
+    background-color: white;
+    margin-left: -10px;
+    height: 36px;
+    width: 36px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-right: 0;
+    }
+}
+
+// Events
+
+.outline:hover {
+    border-color: #d2e3fc;
+    background-color: #f8fafe;
+}
+
+.filled_blue:hover {
+    background-color: #5194ee;
+}
+
+.filled_black:hover {
+    background-color: #555658;
+}

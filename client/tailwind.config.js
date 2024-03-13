@@ -10,6 +10,9 @@ module.exports = {
       }
     }
   },
+  blocklist: [
+    'outline',
+  ],
   plugins: [],
 }
 

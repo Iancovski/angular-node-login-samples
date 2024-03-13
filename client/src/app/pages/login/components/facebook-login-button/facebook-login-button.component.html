@@ -1,0 +1,15 @@
+<div [class]="getClass()" (click)="login()">
+    <div class="content">
+        @if (type === "standard" && theme !== "outline") {
+            <div [class]="getLogoClass()">
+                <img src="../../../../../assets/facebook-logo-blue.png">
+            </div>
+        } @else {
+            <img src="../../../../../assets/facebook-logo-blue.png">
+        }
+
+        @if (type === "standard") {
+            <span>Fazer login com o Facebook</span>
+        }
+    </div>
+</div>
