@@ -4,18 +4,24 @@
 
         <google-login-button [callback]="loginWithGoogle"
                              [clientId]="clientId"
-                             [width]="300"
+                             [width]="250"
+                             locale="en"
                              shape="pill"
                              size="large"
-                             theme="outline"></google-login-button>
+                             text="signin_with"
+                             theme="outline"
+                             type="standard"
+        ></google-login-button>
 
         <span class="h-2"></span>
 
         <facebook-login-button [appId]="appId"
                                [callback]="loginWithFacebook"
-                               [width]="300"
+                               [width]="250"
                                shape="pill"
                                size="large"
-                               theme="outline"></facebook-login-button>
+                               text="signin_with"
+                               theme="outline"
+                               type="standard"></facebook-login-button>
     </mat-card>
 </div>

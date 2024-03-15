@@ -1,4 +1,4 @@
-import {IUser} from './../../../../../server/src/models/user.model';
+import {IUser} from '../../../../../server/src/models/user.model';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
@@ -12,11 +12,25 @@ export class AuthService {
     constructor(private http: HttpClient, private router: Router) {
     }
 
-    login(credential: string) {
+    loginWithGoogle(credential: string) {
         const url = "/api/auth/login";
         const body = {credential};
+        const headers = {"X-Social-Login": "google"};
 
-        this.http.post(url, body).subscribe({
+        this.http.post(url, body, {headers}).subscribe({
+            next: (user: object) => {
+                this.user = user as IUser;
+                this.router.navigate([""]);
+            }
+        });
+    }
+
+    loginWithFacebook(credential: string) {
+        const url = "/api/auth/login";
+        const body = {credential};
+        const headers = {"X-Social-Login": "facebook"};
+
+        this.http.post(url, body, {headers}).subscribe({
             next: (user: object) => {
                 this.user = user as IUser;
                 this.router.navigate([""]);

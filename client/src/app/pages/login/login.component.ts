@@ -23,11 +23,13 @@ export class LoginComponent {
     constructor(private authService: AuthService) {
     }
 
-    loginWithFacebook = (credential: any) => {
+    loginWithGoogle = (credential: any) => {
         console.log(credential);
+        this.authService.loginWithGoogle(credential);
     }
 
-    loginWithGoogle = (credential: any) => {
-        this.authService.login(credential);
+    loginWithFacebook = (credential: any) => {
+        console.log(credential);
+        this.authService.loginWithFacebook(credential);
     }
 }
