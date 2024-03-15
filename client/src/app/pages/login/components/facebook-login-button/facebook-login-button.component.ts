@@ -1,9 +1,12 @@
 import {Component, Input, NgZone, OnInit} from '@angular/core';
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
     selector: 'facebook-login-button',
     standalone: true,
-    imports: [],
+    imports: [
+        NgOptimizedImage
+    ],
     templateUrl: './facebook-login-button.component.html',
     styleUrl: './facebook-login-button.component.scss'
 })
@@ -18,7 +21,7 @@ export class FacebookLoginButtonComponent implements OnInit {
     size: 'small' | 'medium' | 'large' = 'medium';
 
     @Input()
-    text: string = '';
+    text: 'signin_with' | 'signup_with' | 'continue_with' = 'signin_with';
 
     @Input()
     shape: 'square' | 'circle' | 'pill' | 'rectangular' = 'rectangular';
@@ -82,10 +85,39 @@ export class FacebookLoginButtonComponent implements OnInit {
     }
 
     getClass() {
-        return `${this.type} ${this.type}_${this.size} ${this.shape} ${this.theme} ${this.logo_alignment}`;
+        let classes =
+            `button ${this.type} ${this.type}_${this.size} ${this.shape} ${this.theme} ${this.logo_alignment} `;
+
+        if (this.type === "standard" && this.width) {
+            classes += `w-[${this.width}px]`;
+        }
+
+        return classes;
     }
 
     getLogoClass() {
         return `logo_${this.shape}_${this.size}`
+    }
+
+    getLogoSize(): number {
+        switch (this.size) {
+            case "small":
+                return 10;
+            case "medium":
+                return 14;
+            case "large":
+                return 18;
+        }
+    }
+
+    getText(): string {
+        switch (this.text) {
+            case "continue_with":
+                return "Continue with Facebook"
+            case "signin_with":
+                return "Sign in with Facebook"
+            case "signup_with":
+                return "Sign up with Facebook"
+        }
     }
 }

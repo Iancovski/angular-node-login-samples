@@ -1,15 +1,23 @@
 <div (click)="login()" [class]="getClass()">
     <div class="content">
-        @if (type === "standard" && theme !== "outline") {
+        @if (theme !== "outline") {
             <div [class]="getLogoClass()">
-                <img src="../../../../../assets/facebook-logo.png">
+                <img ngSrc="../../../../../assets/facebook-logo.png"
+                     alt="Facebook Icon"
+                     priority
+                     [height]="getLogoSize()"
+                     [width]="getLogoSize()">
             </div>
         } @else {
-            <img src="../../../../../assets/facebook-logo.png">
+            <img ngSrc="../../../../../assets/facebook-logo.png"
+                 alt="Facebook Icon"
+                 priority
+                 [height]="getLogoSize()"
+                 [width]="getLogoSize()">
         }
 
         @if (type === "standard") {
-            <span>Fazer login com o Facebook</span>
+            <span>{{getText()}}</span>
         }
     </div>
 </div>
