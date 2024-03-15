@@ -1,21 +1,27 @@
 <div class="fullscreen centralize bg-neutral-100">
-    <mat-card appearance="outlined" class="p-4 min-w-96">
-        <img [src]="user.picture" alt="User's picture" class="w-24 h-24 rounded-full self-center mb-6">
+    <mat-card appearance="outlined" class="p-8 min-w-96">
+        <img [src]="user.picture" alt="User's picture" class="w-24 h-24 rounded-full self-center mb-4">
 
-        <mat-form-field>
-            <mat-label>ID</mat-label>
-            <input [value]="user.id" matInput readonly="true">
-        </mat-form-field>
+        <h2 class="text-center mb-4">{{ user.name }}</h2>
 
-        <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input [value]="user.name" matInput readonly="true">
-        </mat-form-field>
+        <mat-divider></mat-divider>
 
-        <mat-form-field>
-            <mat-label>E-mail</mat-label>
-            <input [value]="user.email" matInput readonly="true">
-        </mat-form-field>
+        <span class="h-6"></span>
+
+        <h3>ID</h3>
+        <p>{{ user.id }}</p>
+
+        <span class="h-4"></span>
+
+        <h3>E-mail</h3>
+        <p>{{ user.email }}</p>
+
+        <span class="h-4"></span>
+
+        <h3>Social Login</h3>
+        <p>{{ user.socialLogin }}</p>
+
+        <span class="h-6"></span>
 
         <button (click)="logout()" color="primary" mat-flat-button>Logout</button>
     </mat-card>

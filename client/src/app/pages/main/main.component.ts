@@ -4,11 +4,12 @@ import {IUser} from '../../../../../server/src/models/user.model';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import {MatDivider} from "@angular/material/divider";
 
 @Component({
     selector: 'app-main',
     standalone: true,
-    imports: [MatCardModule, MatButtonModule, MatInputModule],
+    imports: [MatCardModule, MatButtonModule, MatInputModule, MatDivider],
     templateUrl: './main.component.html',
     styleUrl: './main.component.scss'
 })
