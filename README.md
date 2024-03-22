@@ -5,7 +5,7 @@ This project consists of samples of **Google** and **Facebook** login methods us
 ## Supported Login Methods
 
 - Google
-- Facebook `WIP`
+- Facebook
 
 ## Quick Start
 
