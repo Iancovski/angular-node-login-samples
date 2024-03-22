@@ -9,7 +9,9 @@ import {Router} from '@angular/router';
 export class AuthService {
     user: IUser = null;
 
-    constructor(private http: HttpClient, private router: Router) {
+    constructor(
+        private http: HttpClient,
+        private router: Router) {
     }
 
     loginWithGoogle(credential: string) {

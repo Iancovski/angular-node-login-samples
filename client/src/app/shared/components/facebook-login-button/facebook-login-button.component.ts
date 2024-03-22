@@ -1,5 +1,6 @@
 import {Component, Input, NgZone, OnInit} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
+import {ScriptService} from "../../services/script.service";
 
 @Component({
     selector: 'facebook-login-button',
@@ -38,7 +39,9 @@ export class FacebookLoginButtonComponent implements OnInit {
     @Input()
     callback: (credential: any) => void;
 
-    constructor(private ngZone: NgZone) {
+    constructor(
+        private ngZone: NgZone,
+        private scriptService: ScriptService) {
     }
 
     ngOnInit(): void {
@@ -58,18 +61,13 @@ export class FacebookLoginButtonComponent implements OnInit {
             throw new Error('Invalid shape for icon type button. Valid shapes: square, circle.');
         }
 
-        this.loadFacebookSdk();
-    }
-
-    loadFacebookSdk() {
-        let script = document.createElement('script');
-
-        script.async = true;
-        script.src = `https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v19.0&appId=${this.appId}`;
-        script.crossOrigin = 'anonymous';
-        script.nonce = 'KAEY5OfB';
-
-        document.head.appendChild(script);
+        this.scriptService.execute(
+            `https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v19.0&appId=${this.appId}`,
+            {
+                id: "facebookSdk",
+                async: true
+            }
+        );
     }
 
     login() {
@@ -78,7 +76,9 @@ export class FacebookLoginButtonComponent implements OnInit {
             if (response.authResponse) {
                 // @ts-ignore
                 FB.api('/me', {fields: 'name, email, picture'}, (response) => {
-                    this.callback(response);
+                    this.ngZone.run(() => {
+                        this.callback(response);
+                    });
                 });
             }
         }, {scope: 'email'});

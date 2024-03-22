@@ -1,4 +1,5 @@
 import {Directive, ElementRef, Input, NgZone, OnInit} from '@angular/core';
+import {ScriptService} from "../../services/script.service";
 
 @Directive({
     selector: 'google-login-button',
@@ -38,7 +39,10 @@ export class GoogleLoginButtonComponent implements OnInit {
     @Input()
     callback: (credential: any) => void;
 
-    constructor(private el: ElementRef, private ngZone: NgZone) {
+    constructor(
+        private el: ElementRef,
+        private ngZone: NgZone,
+        private scriptService: ScriptService) {
     }
 
     ngOnInit(): void {
@@ -62,17 +66,18 @@ export class GoogleLoginButtonComponent implements OnInit {
             throw new Error('Invalid button width. Valid width: min 200 and max 400.')
         }
 
-        this.loadGsiClient();
-    }
+        const scriptExecuted: boolean = this.scriptService.execute(
+            "https://accounts.google.com/gsi/client",
+            {
+                id: "googleGsi",
+                async: true,
+                onload: this.initialize
+            }
+        );
 
-    loadGsiClient() {
-        let script = document.createElement('script');
-
-        script.async = true;
-        script.src = 'https://accounts.google.com/gsi/client';
-        script.onload = this.initialize;
-
-        document.head.appendChild(script);
+        if (!scriptExecuted) {
+            this.renderButton();
+        }
     }
 
     initialize = () => {
@@ -82,6 +87,10 @@ export class GoogleLoginButtonComponent implements OnInit {
             callback: this.handleCredentialResponse
         });
 
+        this.renderButton();
+    }
+
+    renderButton = () => {
         // @ts-ignore
         window.google.accounts.id.renderButton(
             this.el.nativeElement,
