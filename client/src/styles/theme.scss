@@ -1,5 +1,4 @@
 @use '@angular/material' as mat;
-@use 'angular-material-contrast-fix';
 
 @include mat.core();
 
@@ -126,7 +125,6 @@ $theme: mat.define-light-theme((
 ));
 
 @include mat.all-component-themes($theme);
-@include angular-material-contrast-fix.all-component-themes($theme);
 
 html, body {
     height: 100%;
